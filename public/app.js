@@ -1,5 +1,6 @@
-let socket = new WebSocket("ws://" + location.host);
-let messages = [];
+const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+const socket = new WebSocket(`${protocol}://${window.location.host}`);
+
 
 const chat = document.getElementById("chat");
 const input = document.getElementById("msg");
